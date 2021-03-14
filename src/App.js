@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import SearchField from './SearchField.js';
 
 function App() {
+
+  const darkTheme = createMuiTheme({
+    palette: {
+      type: 'dark',
+    },
+  });
+
   return (
+    <ThemeProvider theme={darkTheme}>
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Time on Steam</p> 
+        <SearchField />
       </header>
     </div>
+    </ThemeProvider>
   );
 }
 
