@@ -36,6 +36,16 @@ class SearchField extends React.Component {
     this.keyPress = this.keyPress.bind(this);
   }
 
+/* Randomize array in-place using Durstenfeld shuffle algorithm */
+shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+  }
+}
+
   handleChange(e) {
     this.setState({ value: e.target.value });
   }
@@ -44,8 +54,15 @@ class SearchField extends React.Component {
     // 13 is Enter
     if (e.keyCode === 13) {
 
+      this.shuffleArray(comparisonThings)
+      let arrayToConcat = []
+      for (var i = 0; i < 3; ++i)
+      {
+        arrayToConcat.push(comparisonThings[i])
+      }
+
       this.setState({
-        row_data: this.state.row_data.concat(comparisonThings)
+        row_data: this.state.row_data.concat(arrayToConcat)
       })
 
       const requestOptions = {
@@ -56,7 +73,7 @@ class SearchField extends React.Component {
 
       if (isNaN(e.target.value)) {
         let pieces = e.target.value.split('/')
-        if (pieces.length == 0)
+        if (pieces.length === 0)
         {
           return
         }

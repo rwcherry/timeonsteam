@@ -4,11 +4,19 @@
 		"time_in_minutes": 480
 	},
 	{
-		"name": "Lost a league of legends match",
+		"name": "Lost a League of Legends match",
 		"time_in_minutes": 15
 	},
 	{
 		"name": "Cooked a nice meal",
 		"time_in_minutes": 60
+	},
+	{
+		"name": "Watched the Lord of the Rings extended edition trilogy",
+		"time_in_minutes": 684
+	},
+	{
+		"name": "Ran a mile",
+		"time_in_minutes": 13
 	}
 ]
