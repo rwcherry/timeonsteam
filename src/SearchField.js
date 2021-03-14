@@ -47,20 +47,28 @@ class SearchField extends React.Component {
         width: '25ch',
       },
     }));
-    if (this.state.)
-    return (
-      <TextField
-        label="SteamId or vanity url"
-        id="margin-normal"
-        defaultValue="https://steamcommunity.com/id/archerry/"
-        className={classes.textField}
-        helperText="Your steam user id or vanity url"
-        margin="normal"
-        variant="filled"
-        onKeyDown={this.keyPress}
-        onChange={this.handleChange}
-      />
-    );
+    if (this.state.timeplayed == null)
+    {
+      return (
+        <TextField
+          label="SteamId or vanity url"
+          id="margin-normal"
+          defaultValue="https://steamcommunity.com/id/archerry/"
+          className={classes.textField}
+          helperText="Your steam user id or vanity url"
+          margin="normal"
+          variant="filled"
+          onKeyDown={this.keyPress}
+          onChange={this.handleChange}
+        />
+      );
+    }
+    else
+    {
+      return (
+        <h1>You've played an insane {this.state.timeplayed} minutes on steam!</h1>
+      )
+    }
   }
 }
 
