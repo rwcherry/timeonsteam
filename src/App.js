@@ -9,7 +9,7 @@ const trackingId = "UA-192123823-1";
 function App() {
 
   ReactGA.initialize(trackingId);
-
+  ReactGA.pageview("index");
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
