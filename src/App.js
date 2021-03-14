@@ -2,8 +2,13 @@ import { CssBaseline, Grid } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/core/styles';
 import SearchField from './SearchField.js';
 import theme from './theme.js'
+import ReactGA from 'react-ga';
+
+const trackingId = "UA-192123823-1";
 
 function App() {
+
+  ReactGA.initialize(trackingId);
 
   return (
     <ThemeProvider theme={theme}>
