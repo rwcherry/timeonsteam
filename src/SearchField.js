@@ -23,15 +23,19 @@ class SearchField extends React.Component {
   keyPress(e) {
     if (e.keyCode == 13) {
 
-      console.log('value', e.target.value);
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ vanity: e.target.value })
+        body: JSON.stringify({ steamid: e.target.value })
       };
+
+      if (isNaN(e.target.value)) {
+        requestOptions.body = JSON.stringify({ vanity: e.target.value });
+      }
+
       fetch('http://timeonsteam.com:2889/profileInfo', requestOptions)
         .then(response => response.json())
-        .then(data => console.log(data));
+        .then(data => this.setState({ timeplayed: data.total_played }));
     }
   }
 
@@ -66,7 +70,7 @@ class SearchField extends React.Component {
     else
     {
       return (
-        <h1>You've played an insane {this.state.timeplayed} minutes on steam!</h1>
+        <h2>You've played an insane {this.state.timeplayed} minutes on steam!</h2>
       )
     }
   }
