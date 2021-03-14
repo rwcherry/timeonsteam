@@ -1,0 +1,14 @@
+[
+	{
+		"name": "Had a good night's sleep",
+		"time_in_minutes": 480
+	},
+	{
+		"name": "Lost a league of legends match",
+		"time_in_minutes": 15
+	},
+	{
+		"name": "Cooked a nice meal",
+		"time_in_minutes": 60
+	}
+]
