@@ -116,7 +116,7 @@ shuffleArray(array) {
     {
       return (
         <Paper>
-          <p>You've either played 0 minutes on steam, or your steam privacy settings are too private. Head here to update your settings: https://steamcommunity.com/my/edit/settings</p>
+          <h2>You've either played 0 minutes on steam, or your steam privacy settings are too private. Head here to update your settings: <a href ="https://steamcommunity.com/my/edit/settings">https://steamcommunity.com/my/edit/settings</a></h2>
           <TextField
             label="SteamId or vanity url"
             id="margin-normal"
