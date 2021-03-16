@@ -97,17 +97,38 @@ shuffleArray(array) {
     if (this.state.timeplayed == null)
     {
       return (
-        <TextField
-          label="SteamId or vanity url"
-          id="margin-normal"
-          defaultValue="https://steamcommunity.com/id/archerry/"
-          className={classes.textField}
-          helperText="Your steam user id or vanity url"
-          margin="normal"
-          variant="filled"
-          onKeyDown={this.keyPress}
-          onChange={this.handleChange}
-        />
+        <Paper>
+          <TextField
+            label="SteamId or vanity url"
+            id="margin-normal"
+            defaultValue="https://steamcommunity.com/id/archerry/"
+            className={classes.textField}
+            helperText="Your steam user id or vanity url"
+            margin="normal"
+            variant="filled"
+            onKeyDown={this.keyPress}
+            onChange={this.handleChange}
+          />
+        </Paper>
+      );
+    }
+    else if (this.state.timeplayed == 0)
+    {
+      return (
+        <Paper>
+          <p>You've either played 0 minutes on steam, or your steam privacy settings are too private. Head here to update your settings: https://steamcommunity.com/my/edit/settings</p>
+          <TextField
+            label="SteamId or vanity url"
+            id="margin-normal"
+            defaultValue="https://steamcommunity.com/id/archerry/"
+            className={classes.textField}
+            helperText="Your steam user id or vanity url"
+            margin="normal"
+            variant="filled"
+            onKeyDown={this.keyPress}
+            onChange={this.handleChange}
+          />
+        </Paper>
       );
     }
     else
@@ -136,8 +157,19 @@ shuffleArray(array) {
               </TableBody>
             </Table>
           </TableContainer>
+          <TextField
+            label="Search another"
+            id="margin-normal"
+            defaultValue="https://steamcommunity.com/id/archerry/"
+            className={classes.textField}
+            helperText="Your steam user id or vanity url"
+            margin="normal"
+            variant="filled"
+            onKeyDown={this.keyPress}
+            onChange={this.handleChange}
+          />
         </Paper>
-      )
+      );
     }
   }
 }
